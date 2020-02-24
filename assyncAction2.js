@@ -74,14 +74,13 @@ const reducer=(state=initialState,action)=>{
 const fetchUser=()=>{
     return function(dispatch){
         dispatch(fectUserRequest())
-        axios.get('https://jsonplaceholder.typicode.com/users')
+        axios.get('https://jsonplaceholder.typicode.com/todos')
         .then (res=>{
-            id=res.data.map(_id=>_id.id)
-            name=res.data.map(_name=>_name.name)
-            website=res.data.map(_website=>_website.website)
+            
+            const data = res.data
 
 
-            dispatch(fectUserSuccess([id,name,website]))
+            dispatch(fectUserSuccess(data))
         })
         .catch(error=>{error.message})
     }

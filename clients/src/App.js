@@ -5,6 +5,10 @@ import IceCreamContainer from './components/IceCreamContainer'
 
 import CookieContainer from './components/CookieContainer'
 
+import Header from "../src/components/Header"
+
+import Footer from "../src/components/footer"
+
 import store from "./store"
 
 
@@ -19,10 +23,11 @@ class App extends Component {
     return (
      <Provider store={store}>
         <div className="App">
+          <Header/>
           <CakeContainer/>
           <IceCreamContainer/>
           <CookieContainer/>
-          {/* <Hooks/> */}
+          <Footer/>
           
       </div>
      </Provider>
